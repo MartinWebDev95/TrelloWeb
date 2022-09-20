@@ -1,0 +1,61 @@
+:root{
+  --softWhite: #eae6ff;
+  --blue:#0065ff;
+  --white: #ffffff;
+  --deepBlue:#091e42;
+  --sky: #e6fcff;
+  --gray: #8993A4;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  font-family: 'Mulish', sans-serif;
+  color: var(--deepBlue);
+}
+
+body{
+  background-color: var(--white);
+}
+
+ul{
+  list-style: none;
+}
+
+a, img, picture{
+  display: block;
+}
+
+a{
+  text-decoration: none;
+}
+
+img, picture{
+  max-width: 100%;
+}
+
+.grid{
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  gap: var(--gap, 1rem);
+}
+
+.button-primary{
+  background-color: var(--blue);  
+  color: var(--white);
+  border: none;
+  padding: 1rem 1.5rem;
+  font-weight: normal;
+  font-size: 1.2em;
+}
