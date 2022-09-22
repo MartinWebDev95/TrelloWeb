@@ -6,9 +6,17 @@ const SectionStyled = styled.section`
 `;
 
 const Container = styled.div`
-  width: 85%;
+  width: 100%;
   margin-inline: auto;
   padding-inline: 1rem;
+
+  @media (min-width: 576px) {
+    width: 90%;
+  }
+
+  @media (min-width: 768px) {
+    width: 85%;
+  }
 `;
 
 const DivGrid = styled.div`

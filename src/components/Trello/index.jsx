@@ -1,5 +1,6 @@
 import Header from '../Header';
 import HeroSection from '../HeroSection';
+import InfoSection from '../InfoSection';
 
 function Trello() {
   return (
@@ -7,6 +8,7 @@ function Trello() {
       <Header />
       <main>
         <HeroSection />
+        <InfoSection />
       </main>
     </>
   );
