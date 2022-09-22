@@ -29,7 +29,7 @@ function HeroSection() {
 
           <ColumnRight>
             <picture>
-              <source type="image/png" media="(min-width: 468px)" srcSet={HeroDesktop} />
+              <source type="image/png" media="(min-width: 768px)" srcSet={HeroDesktop} />
               <img src={HeroMobile} alt="" loading="lazy" />
             </picture>
           </ColumnRight>
