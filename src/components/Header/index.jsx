@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Logo from '/assets/logo.svg';
 import NavBar from '../NavBar';
 import {
-  HeaderStyled, DivStyled, ButtonPrimary, ButtonSecondary, ButtonLogo, ButtonMobile,
+  HeaderStyled, ButtonLogo, ButtonMobile,
 } from './styles';
 
 function Header() {
@@ -26,23 +26,7 @@ function Header() {
         <span />
         <span />
       </ButtonMobile>
-      <NavBar setShadow={setShadow} />
-      <DivStyled>
-        <ButtonSecondary
-          type="button"
-          onMouseEnter={handleOnMouseEnter}
-          onMouseLeave={handleOnMouseLeave}
-        >
-          Log in
-        </ButtonSecondary>
-        <ButtonPrimary
-          type="button"
-          onMouseEnter={handleOnMouseEnter}
-          onMouseLeave={handleOnMouseLeave}
-        >
-          Get Trello for free
-        </ButtonPrimary>
-      </DivStyled>
+      <NavBar setShadow={setShadow} openMenu={openMenu} />
     </HeaderStyled>
   );
 }

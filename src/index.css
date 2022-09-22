@@ -38,6 +38,7 @@ a{
 
 img, picture{
   max-width: 100%;
+  display: block;
 }
 
 .grid{

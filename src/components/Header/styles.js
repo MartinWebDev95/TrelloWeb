@@ -5,6 +5,10 @@ const HeaderStyled = styled.header`
   align-items: center;
   justify-content: space-between;
   padding-inline: 1rem;
+  position: fixed;
+  width: 100%;
+  background-color: var(--white);
+  z-index: 9999;
 
   @media (min-width: 1000px) {
     justify-content: normal;
@@ -27,38 +31,6 @@ const ButtonLogo = styled.button`
   border: none;
   padding-block: 1.2rem;
   cursor: pointer;
-`;
-
-const DivStyled = styled.div`
-  display: none;
-  
-  @media (min-width: 1000px) {
-    display: flex;
-    align-items: center;
-  }
-`;
-
-const ButtonPrimary = styled.button`
-  background-color: var(--blue);
-  color: var(--white);
-  border: none;
-  padding-block: 1.2rem;
-  padding-inline: 2rem;
-  font-size: 1.1em;
-  cursor: pointer;
-
-  &:hover{
-    background-color: #0747A6;
-  }
-`;
-
-const ButtonSecondary = styled(ButtonPrimary)`
-  background-color: transparent;
-  color: var(--deepBlue);
-
-  &:hover{
-    background-color: transparent;
-  }
 `;
 
 const ButtonMobile = styled.button`
@@ -125,5 +97,5 @@ const ButtonMobile = styled.button`
 `;
 
 export {
-  HeaderStyled, ButtonLogo, DivStyled, ButtonPrimary, ButtonSecondary, ButtonMobile,
+  HeaderStyled, ButtonLogo, ButtonMobile,
 };
