@@ -1,6 +1,7 @@
 import Header from '../Header';
 import HeroSection from '../HeroSection';
 import InfoSection from '../InfoSection';
+import TrustedCompaniesSection from '../TrustedCompaniesSection';
 
 function Trello() {
   return (
@@ -9,6 +10,7 @@ function Trello() {
       <main>
         <HeroSection />
         <InfoSection />
+        <TrustedCompaniesSection />
       </main>
     </>
   );
