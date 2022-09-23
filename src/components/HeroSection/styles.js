@@ -11,7 +11,7 @@ const Container = styled.div`
   padding-inline: 1rem;
 
   @media (min-width: 576px) {
-    width: 90%;
+    width: 75%;
   }
 
   @media (min-width: 768px) {
