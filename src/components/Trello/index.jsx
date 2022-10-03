@@ -5,6 +5,7 @@ import TrustedCompaniesSection from '../TrustedCompaniesSection';
 import FeaturesSection from '../FeaturesSection';
 import TestimonialSection from '../TestimonialSection';
 import SignUp from '../SignUp';
+import DownloadTrello from '../DownloadTrello';
 
 function Trello() {
   return (
@@ -17,6 +18,7 @@ function Trello() {
         <FeaturesSection />
         <TestimonialSection />
         <SignUp />
+        <DownloadTrello />
       </main>
     </>
   );
