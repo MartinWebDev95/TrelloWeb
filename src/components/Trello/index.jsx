@@ -6,6 +6,7 @@ import FeaturesSection from '../FeaturesSection';
 import TestimonialSection from '../TestimonialSection';
 import SignUp from '../SignUp';
 import DownloadTrello from '../DownloadTrello';
+import Footer from '../Footer';
 
 function Trello() {
   return (
@@ -20,6 +21,7 @@ function Trello() {
         <SignUp />
         <DownloadTrello />
       </main>
+      <Footer />
     </>
   );
 }
