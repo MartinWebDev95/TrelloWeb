@@ -23,7 +23,7 @@ const Title = styled.h4`
   font-size: 1.5em;
   margin-bottom: 1rem;
 
-  @media (min-width: 1000px) {
+  @media (min-width: 768px) {
     font-size: 2.2em;
   }
 `;
