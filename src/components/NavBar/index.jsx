@@ -36,7 +36,10 @@ function NavBar({
   return (
     <NavStyled openMenu={openMenu} openSubmenu={openSubmenu}>
       <List>
-        <ListItemMenu onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
+        <ListItemMenu
+          onMouseEnter={handleOnMouseEnter}
+          onMouseLeave={handleOnMouseLeave}
+        >
           <DivNameMenuContainer
             aria-selected={openSubmenu === 'features'}
           >

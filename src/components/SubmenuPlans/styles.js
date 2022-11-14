@@ -10,7 +10,7 @@ const Submenu = styled.ul`
   grid-template-rows: 1fr auto;
   row-gap: 1rem;
   padding-inline: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 4rem;
   z-index: 1;
   overflow-y: auto;
   height: 100%;
