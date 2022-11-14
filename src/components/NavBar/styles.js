@@ -28,7 +28,7 @@ const NavStyled = styled.nav`
 
   ${(props) => (props.openMenu
     ? `
-      height: 90vh;
+      height: 100vh;
       `
     : `
       height: 0;
