@@ -2,6 +2,10 @@ let total = 0;
 
 function useCarrousel(setDots, carrousel) {
   const carrouselTestimonial = carrousel;
+  let isTouching = false;
+  let startPointer;
+  let scrollLeft;
+  let pointer;
 
   const handlePrevious = () => {
     if (total === 0) {
@@ -76,8 +80,39 @@ function useCarrousel(setDots, carrousel) {
     }
   };
 
+  const handleTouchStart = (e) => {
+    const isMobileDevice = window.navigator.userAgent.toLowerCase().includes('mobi');
+
+    if (!isMobileDevice) return;
+
+    isTouching = true;
+    startPointer = (e.changedTouches[0].pageX - carrouselTestimonial.current.offsetLeft);
+    scrollLeft = carrouselTestimonial.current.scrollLeft;
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isTouching) return;
+
+    pointer = e.changedTouches[0].pageX - carrouselTestimonial.current.offsetLeft;
+  };
+
+  const handleTouchEnd = () => {
+    isTouching = false;
+
+    if (pointer < startPointer) {
+      handleNext();
+    } else {
+      handlePrevious();
+    }
+  };
+
   return {
-    handleClickDot, handleNext, handlePrevious,
+    handleClickDot,
+    handleNext,
+    handlePrevious,
+    handleTouchStart,
+    handleTouchMove,
+    handleTouchEnd,
   };
 }
 

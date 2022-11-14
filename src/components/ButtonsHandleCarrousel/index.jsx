@@ -1,12 +1,9 @@
-import { useState } from 'react';
 import useCarrousel from '../../hooks/useCarrousel';
 import {
   Dots, DivButtons, ButtonNext, ButtonPrevious,
 } from './styles';
 
-function ButtonsHandleCarrousel({ carrousel }) {
-  const [dots, setDots] = useState('testimonial-1');
-
+function ButtonsHandleCarrousel({ carrousel, dots, setDots }) {
   const {
     handleClickDot, handleNext, handlePrevious,
   } = useCarrousel(setDots, carrousel);

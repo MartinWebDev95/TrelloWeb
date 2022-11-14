@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 import ButtonsHandleCarrousel from '../ButtonsHandleCarrousel';
 import Testimonial from '../Testimonial';
@@ -9,15 +9,28 @@ import LogoRedWings from '/assets/detroit-red-wings.svg';
 import LogoSprout from '/assets/sprout-social.svg';
 
 import { ContainerCarrousel, Container, Wrapper } from './styles';
+import useCarrousel from '../../hooks/useCarrousel';
 
 function Carrousel() {
+  const [dots, setDots] = useState('testimonial-1');
   const carrousel = useRef(null);
+
+  const { handleTouchStart, handleTouchMove, handleTouchEnd } = useCarrousel(setDots, carrousel);
 
   return (
     <Container>
       <Wrapper>
-        <ButtonsHandleCarrousel carrousel={carrousel} />
-        <ContainerCarrousel ref={carrousel}>
+        <ButtonsHandleCarrousel
+          carrousel={carrousel}
+          dots={dots}
+          setDots={setDots}
+        />
+        <ContainerCarrousel
+          ref={carrousel}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <Testimonial
             text="Everyone loves it; it has democratized our finance function.
           In some ways Trello shattered hierarchy and brought us together."
