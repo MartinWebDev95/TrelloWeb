@@ -10,10 +10,11 @@ const Submenu = styled.ul`
   grid-template-rows: 1fr auto;
   row-gap: 1rem;
   padding-inline: 1rem;
-  padding-bottom: 4rem;
+  padding-bottom: 8rem;
   z-index: 1;
   overflow-y: auto;
   height: 100%;
+  width: 100%;
   transition: all .3s ease-in-out;
 
   ${(props) => (props.openSubmenu === 'resources'
@@ -21,11 +22,11 @@ const Submenu = styled.ul`
       transform: translateX(0%);
     `
     : `
-      transform: translateX(100%);
+      transform: translateX(200%);
     `
   )}
 
-  ${(props) => (props.openMenu === false && 'transform: translateX(100%);')}
+  ${(props) => (props.openMenu === false && 'transform: translateX(200%);')}
 
   @media (min-width: 1000px){
     width: 100%;
@@ -168,13 +169,13 @@ const ListItemTitle = styled.div`
 
 const FeaturesTitle = styled.h3`
   color: #505F79;
-  font-size: 1.1em;
+  font-size: 1.2em;
   text-align: left;
 `;
 
 const FeaturesInfo = styled.p`
   color: #505F79;
-  font-size: .9em;
+  font-size: 1em;
   line-height: 1.4em;
   text-align: left;
 `;
@@ -240,7 +241,7 @@ const CardInfo = styled.div`
 
   p:last-of-type{
     color: #505F79;
-    font-size: .9em;
+    font-size: 1em;
 
     @media (min-width: 1000px){  
       font-size: 1.1em;
@@ -256,7 +257,7 @@ const DivHelpingTeams = styled.div`
 
   p{
     color: #505F79;
-    font-size: .7em;
+    font-size: .9em;
     padding-block: 1rem;
     line-height: 1.8em;
   }

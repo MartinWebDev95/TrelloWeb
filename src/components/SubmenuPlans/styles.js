@@ -10,10 +10,11 @@ const Submenu = styled.ul`
   grid-template-rows: 1fr auto;
   row-gap: 1rem;
   padding-inline: 1rem;
-  padding-bottom: 4rem;
+  padding-bottom: 8rem;
   z-index: 1;
   overflow-y: auto;
   height: 100%;
+  width: 100%;
   transition: all .3s ease-in-out;
 
   ${(props) => (props.openSubmenu === 'plans'
@@ -21,11 +22,11 @@ const Submenu = styled.ul`
       transform: translateX(0%);
     `
     : `
-      transform: translateX(100%);
+      transform: translateX(200%);
     `
   )}
 
-  ${(props) => (props.openMenu === false && 'transform: translateX(100%);')}
+  ${(props) => (props.openMenu === false && 'transform: translateX(200%);')}
 
   @media (min-width: 1000px){
     width: 100%;
@@ -92,7 +93,7 @@ const SecondListSubmenuItem = styled.li`
 
   p{
     color: #505F79;
-    font-size: .7em;
+    font-size: .9em;
     padding-block: 1rem;
     line-height: 1.8em;
 
@@ -193,7 +194,7 @@ const FeaturesTitle = styled.h3`
 
 const FeaturesInfo = styled.p`
   color: #505F79;
-  font-size: .9em;
+  font-size: 1em;
   line-height: 1.4em;
   text-align: left;
 `;
@@ -216,10 +217,6 @@ const Wrapper = styled.div`
     font-size: 1em;
   }
 
-  p{
-    font-size: .7em;
-  }
-
   button{
     background-color: var(--white);
     border: 1px solid #ffc400;
@@ -240,6 +237,11 @@ const Wrapper = styled.div`
   }
 `;
 
+const FreePlanInfo = styled.p`
+  font-size: .9em;
+  color: #505F79;
+`;
+
 export {
   Submenu,
   FirstListSubmenuItem,
@@ -251,4 +253,5 @@ export {
   ListItem,
   ListItemTitle,
   Wrapper,
+  FreePlanInfo,
 };

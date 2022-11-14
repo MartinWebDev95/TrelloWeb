@@ -9,6 +9,7 @@ import {
   ListItem,
   ListItemTitle,
   Wrapper,
+  FreePlanInfo,
 } from './styles';
 
 function SubmenuPlans({ openSubmenu, openMenu }) {
@@ -68,9 +69,9 @@ function SubmenuPlans({ openSubmenu, openMenu }) {
                   </svg>
                   <FeaturesTitle>Free plan</FeaturesTitle>
                 </ListItemTitle>
-                <FeaturesInfo>
+                <FreePlanInfo>
                   For individuals or small teams looking to keep work organized.
-                </FeaturesInfo>
+                </FreePlanInfo>
               </div>
               <button type="button">Take a tour of Trello</button>
             </Wrapper>

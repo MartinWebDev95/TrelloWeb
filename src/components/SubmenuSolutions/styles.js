@@ -10,10 +10,11 @@ const Submenu = styled.ul`
   grid-template-rows: 1fr auto;
   row-gap: 1rem;
   padding-inline: 1rem;
-  padding-bottom: 4rem;
+  padding-bottom: 8rem;
   z-index: 1;
   overflow-y: auto;
   height: 100%;
+  width: 100%;
   transition: all .3s ease-in-out;
 
   ${(props) => (props.openSubmenu === 'solutions'
@@ -21,11 +22,11 @@ const Submenu = styled.ul`
       transform: translateX(0%);
     `
     : `
-      transform: translateX(100%);
+      transform: translateX(200%);
     `
   )}
 
-  ${(props) => (props.openMenu === false && 'transform: translateX(100%);')}
+  ${(props) => (props.openMenu === false && 'transform: translateX(200%);')}
 
   @media (min-width: 1000px){
     width: 100%;
@@ -177,7 +178,6 @@ const Features = styled.ul`
     flex-direction: row;
     flex-wrap: wrap;
     padding-top: 2rem;
-    row-gap: 1rem;
     column-gap: 1rem;
   }
 `;
@@ -198,7 +198,7 @@ const FeaturesButton = styled.button`
 
   @media (min-width: 1000px){
     width: fit-content;
-    height: 120px;
+    height: 160px;
     padding-block: 0;
     padding: 1rem;
     border-top: 0px;
@@ -225,13 +225,13 @@ const ButtonSeeAllFeatures = styled(ButtonSeeUseCases)`
 
 const FeaturesTitle = styled.h3`
   color: #505F79;
-  font-size: 1.1em;
+  font-size: 1.2em;
   text-align: left;
 `;
 
 const FeaturesInfo = styled.p`
   color: #505F79;
-  font-size: .8em;
+  font-size: 1em;
   line-height: 1.4em;
   text-align: left;
 `;
