@@ -1,50 +1,41 @@
 import { useState } from 'react';
+
 import Logo from '/assets/logo.svg';
+
 import NavBar from '../NavBar';
+
+import useShadow from '../../hooks/useShadow';
+import useMenu from '../../hooks/useMenu';
+
 import {
   HeaderStyled, ButtonLogo, ButtonMobile, ButtonBack, DivStyled,
 } from './styles';
 
 function Header() {
-  const [shadow, setShadow] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState('');
-
-  const handleOnMouseEnter = () => setShadow(true);
-  const handleOnMouseLeave = () => setShadow(false);
-
-  const handleClickOpenMenu = () => {
-    setOpenMenu((previousState) => {
-      if (previousState) {
-        document.body.style = 'overflow: auto';
-        return false;
-      }
-
-      document.body.style = 'overflow: hidden';
-      return true;
-    });
-  };
-
-  const handleClickBack = () => setOpenSubmenu('');
-
-  const addShadowToTopBar = () => {
-    window.scrollY > 0 ? setShadow(true) : setShadow(false);
-  };
-
-  window.addEventListener('scroll', addShadowToTopBar);
+  const { shadow, handleOnMouseEnter, handleOnMouseLeave } = useShadow();
+  const {
+    handleClickOpenMenu,
+    handleClickBack,
+  } = useMenu(openSubmenu, setOpenSubmenu, setOpenMenu);
 
   return (
-    <HeaderStyled shadow={shadow}>
+    <HeaderStyled
+      shadow={shadow}
+      onMouseEnter={handleOnMouseEnter}
+      onMouseLeave={handleOnMouseLeave}
+    >
+
       <DivStyled>
         <ButtonLogo
           type="button"
           aria-hidden={openSubmenu !== ''}
           openMenu={openMenu}
-          onMouseEnter={handleOnMouseEnter}
-          onMouseLeave={handleOnMouseLeave}
         >
           <img src={Logo} alt="Logo Trello" />
         </ButtonLogo>
+
         <ButtonBack
           type="button"
           aria-hidden={openSubmenu === ''}
@@ -58,6 +49,7 @@ function Header() {
           Back
         </ButtonBack>
       </DivStyled>
+
       <ButtonMobile
         type="button"
         openMenu={openMenu}
@@ -67,12 +59,13 @@ function Header() {
         <span />
         <span />
       </ButtonMobile>
+
       <NavBar
-        setShadow={setShadow}
         openMenu={openMenu}
-        setOpenSubmenu={setOpenSubmenu}
         openSubmenu={openSubmenu}
+        setOpenSubmenu={setOpenSubmenu}
       />
+
     </HeaderStyled>
   );
 }

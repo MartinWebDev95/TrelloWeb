@@ -1,8 +1,12 @@
+import Arrow from '/assets/arrow.svg';
+
 import SubmenuFeatures from '../SubmenuFeatures';
 import SubmenuSolutions from '../SubmenuSolutions';
 import SubmenuPlans from '../SubmenuPlans';
 import SubmenuResources from '../SubmenuResources';
-import Arrow from '/assets/arrow.svg';
+
+import useMenu from '../../hooks/useMenu';
+
 import {
   NavStyled,
   List,
@@ -15,34 +19,14 @@ import {
   Wrapper,
 } from './styles';
 
-function NavBar({
-  setShadow, openMenu, setOpenSubmenu, openSubmenu,
-}) {
-  const handleOnMouseEnter = () => setShadow(true);
-  const handleOnMouseLeave = () => setShadow(false);
-
-  const handleOpenSubmenu = (e) => {
-    setOpenSubmenu((previousState) => {
-      if (previousState === e.target.value) {
-        document.body.style = 'overflow: auto';
-        return '';
-      }
-
-      document.body.style = 'overflow: hidden';
-      return e.target.value;
-    });
-  };
+function NavBar({ openMenu, openSubmenu, setOpenSubmenu }) {
+  const { handleOpenSubmenu } = useMenu(openSubmenu, setOpenSubmenu);
 
   return (
     <NavStyled openMenu={openMenu} openSubmenu={openSubmenu}>
       <List>
-        <ListItemMenu
-          onMouseEnter={handleOnMouseEnter}
-          onMouseLeave={handleOnMouseLeave}
-        >
-          <DivNameMenuContainer
-            aria-selected={openSubmenu === 'features'}
-          >
+        <ListItemMenu>
+          <DivNameMenuContainer aria-selected={openSubmenu === 'features'}>
             <Wrapper>
               <ButtonMenu
                 type="button"
@@ -62,10 +46,8 @@ function NavBar({
           />
 
         </ListItemMenu>
-        <ListItemMenu onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
-          <DivNameMenuContainer
-            aria-selected={openSubmenu === 'solutions'}
-          >
+        <ListItemMenu>
+          <DivNameMenuContainer aria-selected={openSubmenu === 'solutions'}>
             <Wrapper>
               <ButtonMenu
                 type="button"
@@ -85,10 +67,8 @@ function NavBar({
           />
 
         </ListItemMenu>
-        <ListItemMenu onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
-          <DivNameMenuContainer
-            aria-selected={openSubmenu === 'plans'}
-          >
+        <ListItemMenu>
+          <DivNameMenuContainer aria-selected={openSubmenu === 'plans'}>
             <Wrapper>
               <ButtonMenu
                 type="button"
@@ -108,19 +88,15 @@ function NavBar({
           />
 
         </ListItemMenu>
-        <ListItemMenu onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
+        <ListItemMenu>
           <DivNameMenuContainer>
-            <ButtonMenu
-              type="button"
-            >
+            <ButtonMenu type="button">
               Pricing
             </ButtonMenu>
           </DivNameMenuContainer>
         </ListItemMenu>
-        <ListItemMenu onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
-          <DivNameMenuContainer
-            aria-selected={openSubmenu === 'resources'}
-          >
+        <ListItemMenu>
+          <DivNameMenuContainer aria-selected={openSubmenu === 'resources'}>
             <Wrapper>
               <ButtonMenu
                 type="button"
@@ -142,18 +118,10 @@ function NavBar({
         </ListItemMenu>
       </List>
       <DivStyled>
-        <ButtonSecondary
-          type="button"
-          onMouseEnter={handleOnMouseEnter}
-          onMouseLeave={handleOnMouseLeave}
-        >
+        <ButtonSecondary type="button">
           Log in
         </ButtonSecondary>
-        <ButtonPrimary
-          type="button"
-          onMouseEnter={handleOnMouseEnter}
-          onMouseLeave={handleOnMouseLeave}
-        >
+        <ButtonPrimary type="button">
           Get Trello for free
         </ButtonPrimary>
       </DivStyled>

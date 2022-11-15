@@ -4,7 +4,6 @@ function useCarrousel(setDots, carrousel) {
   const carrouselTestimonial = carrousel;
   let isTouching = false;
   let startPointer;
-  let scrollLeft;
   let pointer;
 
   const handlePrevious = () => {
@@ -87,7 +86,6 @@ function useCarrousel(setDots, carrousel) {
 
     isTouching = true;
     startPointer = (e.changedTouches[0].pageX - carrouselTestimonial.current.offsetLeft);
-    scrollLeft = carrouselTestimonial.current.scrollLeft;
   };
 
   const handleTouchMove = (e) => {
