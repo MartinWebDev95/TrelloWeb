@@ -6,6 +6,7 @@ const NavStyled = styled.nav`
   position: absolute;
   top: 100%;
   left: 0;
+  bottom: 0;
   width: 100%;
   padding-inline: 1rem;
   overflow-x: hidden;
@@ -31,7 +32,7 @@ const NavStyled = styled.nav`
       height: 100vh;
       `
     : `
-      height: 0;
+      height: 0vh;
       `
   )}
 
